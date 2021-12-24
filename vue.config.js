@@ -1,11 +1,28 @@
-// vue.config.js
+// @ts-nocheck
+const Components = require('unplugin-vue-components/webpack')
+const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 
-/**
- * @type {import('@vue/cli-service').ProjectOptions}
- */
 module.exports = {
-    // 详细配置查询vue cli官网
-    // publicPath默认值为'/' 默认架设在根路径上
-    // 修改为'./'后可以将网页部署在任意位置
-    publicPath: './'
+    publicPath: '',
+    outputDir: 'dist',
+    chainWebpack: config => {
+        config
+            .plugin('html')
+            .tap(args => {
+                args[0].title = "圣遗物强化助手";
+                return args;
+            })
+    },
+    configureWebpack: {
+        plugins: [
+            Components({
+                resolvers: [ElementPlusResolver()],
+            })
+        ]
+    },
+    devServer: {
+        watchOptions: {
+            ignored: /node_modules/
+        }
+    }
 }
