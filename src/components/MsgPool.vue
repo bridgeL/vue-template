@@ -47,17 +47,17 @@ export default {
         return {
             htmlLinkArray: [
                 {
-                    href: "/lab/cube riddle",
+                    href: "./lab/cube riddle/index.html",
                     title: "原神方块类谜题解密器",
                     tags: ["js", "genshin"],
                 },
                 {
-                    href: "/lab/cyberpunk",
+                    href: "./lab/cyberpunk/buhui.html",
                     title: "网络疯子模拟器",
                     tags: ["js", "cyberpunk", "labor"],
                 },
                 {
-                    href: "/lab/artifact",
+                    href: "./lab/artifact/index.html",
                     title: "原神圣遗物筛选(转载)",
                     tags: ["vue", "genshin"],
                 },
