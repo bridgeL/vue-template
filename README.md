@@ -7,6 +7,9 @@ tired of using vue-cli to create a vue prj everytime
 
 使用vue2
 
+# git 查看各个branch关系的指令
+git log --graph --decorate --oneline --simplify-by-decoration --all
+
 # vue-prj
 
 ## Project setup
