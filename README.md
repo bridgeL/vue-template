@@ -10,6 +10,9 @@ tired of using vue-cli to create a vue prj everytime
 # git 查看各个branch关系的指令
 git log --graph --decorate --oneline --simplify-by-decoration --all
 
+# 使用图形化工具 gitk 查看各个branch关系的指令
+gitk --simplify-by-decoration --all
+
 # vue-prj
 
 ## Project setup
