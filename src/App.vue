@@ -1,28 +1,41 @@
 <template>
     <div id="app">
-        <img alt="Vue logo" src="./assets/logo.png" />
-        <HelloWorld msg="Welcome to Your Vue.js App" />
+        <Face />
+        <NavigationBar :open_label="open_label" :labelSel="labelSel"/>
+        <MsgPool :labelSel="labelSel" />
     </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Face from "@/components/Face.vue";
+import NavigationBar from "@/components/NavigationBar";
+import MsgPool from "@/components/MsgPool";
 
 export default {
     name: "App",
+    data() {
+        return {
+            labelSel: sessionStorage.getItem('labelSel')||"首页",
+        };
+    },
     components: {
-        HelloWorld,
+        Face,
+        NavigationBar,
+        MsgPool,
+    },
+    methods: {
+        open_label(label) {
+            this.labelSel = label;
+            sessionStorage.setItem('labelSel',label)
+        },
     },
 };
 </script>
-
 <style>
 #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+}
+html {
+    background: rgb(243, 242, 242);
 }
 </style>
